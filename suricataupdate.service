@@ -1,0 +1,14 @@
+[Unit]
+Description=Suricata Starter for testing
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/suricata-update
+WorkingDirectory=/usr/bin
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target

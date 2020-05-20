@@ -1,0 +1,16 @@
+[Unit]
+Description=Suricata Starter for testing
+Wants=network-online.target
+After = network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/suricata -c /etc/suricata/suricata.yaml -i *
+WorkingDirectory=/usr/bin
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
